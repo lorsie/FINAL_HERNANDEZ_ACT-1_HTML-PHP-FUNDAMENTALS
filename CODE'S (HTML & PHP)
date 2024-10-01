@@ -1,0 +1,134 @@
+CODES:
+
+---NUMBER 1---
+HTML:
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <form>
+      <label for="username">Username: <input type="text" id="username"></label>
+      <label for="password">Password: <input type="password" id="password"></label>
+      <input type="button" value="Login">
+      <input type="button" value="Logout">
+    </form>
+  </body>
+</html>
+
+PHP:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Form</title>
+</head>
+<body>
+    <form action="login.php" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Login">
+        <input type="button" value="Logout" onclick="window.location.href='logout.php';">
+    </form>
+</body>
+</html>
+
+---NUMBER 2---
+HTML:
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order System</title>
+  </head>
+  <body>
+    <h1>Menu</h1>
+    <table border="1" style="width: 30%"> 
+      <tr>
+        <th>Order</th>
+        <th>Amount</th>
+      </tr>
+      <tr>
+        <td>Burger</td>
+        <td>50</td>
+      </tr>
+      <tr>
+        <td>Fries</td>
+        <td>75</td>
+      </tr>
+      <tr>
+        <td>Steak</td>
+        <td>150</td>
+      </tr>
+    </table>
+   <p> 
+   <form action="" method="post">
+     <label for="order">Select an Order: </label>
+     <select name="order" id="order">
+       <option value="burger">Burger</option>
+       <option value="fries">Fries</option>
+       <option value="steak">Steak</option>
+      </select>
+      </p>
+      <label for="quantity">Quantity: </label>
+      <input type="number" id="quantity" name="quantity">
+      <br><br>
+      <label for="cash">Cash: </label>
+      <input type="number" id="cash" name="cash">
+      <br><br>
+      <input type="submit" value="Submit">
+   </form>
+  </body>
+</html>
+
+PHP:
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Form</title>
+</head>
+<body>
+    <h2>Menu</h2>
+    <table>
+        <tr>
+            <th>Order</th>
+            <th>Amount</th>
+        </tr>
+        <tr>
+            <td>Burger</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Fries</td>
+            <td>75</td>
+        </tr>
+        <tr>
+            <td>Steak</td>
+            <td>150</td>
+        </tr>
+    </table>
+
+    <form action="process_order.php" method="post">
+        <label for="order">Select an order:</label>
+        <select id="order" name="order">
+            <option value="Burger">Burger</option>
+            <option value="Fries">Fries</option>
+            <option value="Steak">Steak</option>
+        </select><br><br>
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" name="quantity" min="1" required><br><br>
+
+        <label for="cash">Cash:</label>
+        <input type="number" id="cash" name="cash" min="0" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
